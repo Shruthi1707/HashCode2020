@@ -9,6 +9,7 @@ links1 = {"RVCE": "https://google.com",
          "RNSIT":"https://www.rnsit.ac.in/"}
 links2= {"PESU":"https://www.pesuacademy.com/Academy/sessionExpired"}
 links3= {"PESU":"https://cs.pes.edu/programs/"}
+links4= {"PES":"https://www.pes.edu/contact/"}
 
 
 # Create new Tkinter instance
@@ -115,15 +116,15 @@ features.set("Select Feature")
 
 def next_callback(*args):
     # Get Feature
-    if features.get() == "About college":
-        # If featuer is show college, the show College link page
-        page_linking.tkraise()
+    if features.get() == "About College":
+            # If featuer is show college, the show College link page
+            page_linking.tkraise()
 
-        # Set text to college link text
-        lbl_link["text"] = "Link for college " + college.get()
+            # Set text to college link text
+            lbl_link["text"] = "About College" + college.get()
 
-        # Set Hyperlink to Required college link
-        lbl_link.bind("<Button-1>", lambda x: webbrowser.open_new(links1[college.get()]))
+            # Set Hyperlink to Required college link
+            lbl_link.bind("<Button-1>", lambda x: webbrowser.open_new(links1[college.get()]))
     elif features.get() == "How to apply":
             # If featuer is show college, the show College link page
             page_linking.tkraise()
@@ -142,6 +143,15 @@ def next_callback(*args):
 
             # Set Hyperlink to Required college link
             lbl_link.bind("<Button-1>", lambda x: webbrowser.open_new(links3[college.get()]))
+    elif features.get() == "Contact the college":
+            # If featuer is show college, the show College link page
+            page_linking.tkraise()
+
+            # Set text to college link text
+            lbl_link["text"] = "Contact the college" + college.get()
+
+            # Set Hyperlink to Required college link
+            lbl_link.bind("<Button-1>", lambda x: webbrowser.open_new(links4[college.get()]))
     # elif features.get() == "feature 2":
     #   open feature 2 page
     #   customize feature 2 page
@@ -149,7 +159,7 @@ def next_callback(*args):
 
 
 # Creating an option menu in page_home
-feature_option = OptionMenu(page_home, features, "About College", "How to apply", "Syllabi and courses",
+feature_option = OptionMenu(page_home, features, "About College", "How to apply", "Syllabi and courses","Contact the college",
                             command=next_callback)
 feature_option.configure(state="disabled")
 
