@@ -1,1 +1,1 @@
-# Hashcode2020
+Entry for Hashcode2020 (Dunder Hacklin)
